@@ -25,7 +25,19 @@ class ProfilePage extends StatelessWidget {
                 shape: BoxShape.circle,
              ),
               child: Icon(Icons.person_sharp, size: 70,),
-            )
+            ),
+            const Divider(
+              indent: 100,
+              endIndent: 100,
+              thickness: 2,
+            ),
+            ElevatedButton(
+              onPressed: () {
+
+              },
+              child: const Text('To EditProfile'),
+            ),
+
           ],
         ),
       )

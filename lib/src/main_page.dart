@@ -28,7 +28,11 @@ class MainPage extends StatelessWidget {
               thickness: 2,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                context.goNamed('profile', params: {
+                  'name' : 'John Wick',
+                });
+              },
               child: const Text('To Profile'),
             ),
             ElevatedButton(
