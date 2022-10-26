@@ -1,7 +1,10 @@
-// part of 'user_bloc.dart';
+
+
+import 'package:equatable/equatable.dart';
 
 import '../src/user.dart';
-import 'package:equatable/equatable.dart';
+
+//part of 'user_bloc.part';
 
 abstract class UserState extends Equatable {
   const UserState();

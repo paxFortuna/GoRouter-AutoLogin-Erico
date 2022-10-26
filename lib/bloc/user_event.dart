@@ -1,6 +1,7 @@
-// part of 'user_bloc.part';
+
 
 import 'package:equatable/equatable.dart';
+//part of 'user_bloc.part';
 
 abstract class UserEvent extends Equatable {
   const UserEvent();
