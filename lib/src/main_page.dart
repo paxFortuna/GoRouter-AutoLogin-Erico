@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:gorouter_demo/bloc/user_bloc.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -29,9 +31,10 @@ class MainPage extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                context.goNamed('profile', params: {
-                  'name' : 'John Wick',
-                });
+                context.goNamed('profile');
+                //     params: {
+                //   'name' : 'John Wick',
+                // });
               },
               child: const Text('To Profile'),
             ),
@@ -47,7 +50,8 @@ class MainPage extends StatelessWidget {
               thickness: 2,),
             ElevatedButton(
               onPressed: () {
-                context.goNamed('login');
+                // context.goNamed('login');
+                context.read<UserBloc>().add(SignOut());
               },
               child: const Text('Logout'),
             ),
