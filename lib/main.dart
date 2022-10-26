@@ -2,10 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:gorouter_demo/src/about_page.dart';
+import 'package:gorouter_demo/src/edit_profile_page.dart';
 import 'package:gorouter_demo/src/login_page.dart';
 import 'package:gorouter_demo/src/profile_page.dart';
 
 import 'src/main_page.dart';
+import 'src/user.dart';
 
 void main() {
   runApp(MyApp());
@@ -43,6 +45,23 @@ class MyApp extends StatelessWidget {
               String name = state.params['name'] ?? 'no name';
               return ProfilePage(name: name);
             },
+            routes: [
+              GoRoute(
+                path: 'edit_profile', // 주의: '/about' 아님,
+                name: 'edit_profile',
+                builder: (context, state) {
+                  Object? object = state.extra;
+
+                  if (object != null && object is User) {
+                    return EditProfilePage(user: object);
+                  } else {
+                    return const EditProfilePage(
+                      user: User(name: 'no name', email: 'no eamil'),
+                    );
+                  }
+                },
+              ),
+            ],
           ),
         ],
       ),
