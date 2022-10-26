@@ -18,7 +18,7 @@ class EditProfilePage extends StatelessWidget {
       ),
       body: Center(
         child: BlocBuilder<UserBloc, UserState>(
-          builder: (context, snapshot) {
+          builder: (context, state) {
             return Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [Container(
