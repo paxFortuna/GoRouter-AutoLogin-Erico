@@ -5,6 +5,20 @@ class AboutPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('About Page'),
+      ),
+      body: Container(
+        alignment: Alignment.center,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+            Text('About Page', style: TextStyle(fontSize: 30),),
+            Text ('어바웃 페이지에서는 어바웃만 합니다'),
+          ],
+        ),
+      ),
+    );
   }
 }

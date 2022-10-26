@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:gorouter_demo/src/about_page.dart';
 import 'package:gorouter_demo/src/login_page.dart';
 
 import 'src/main_page.dart';
@@ -13,16 +15,26 @@ class MyApp extends StatelessWidget {
     routes: [
       // top leve router
       GoRoute(
-          path: '/login',
-          name: 'login',
-          builder: (context, state) => const LoginPage(),
+        path: '/login',
+        name: 'login',
+        builder: (context, state) => const LoginPage(),
       ),
       GoRoute(
         path: '/',
         name: 'main_page',
-        builder: (context, state) => const MainPage(),
+        builder: (context, state) {
+          return const MainPage();
+        },
+        // sub level router
+        routes: [
+          GoRoute(
+              path: 'about', // 주의: '/about' 아님,
+              name: 'about',
+              builder: (context, state) {
+                return const AboutPage();
+              }),
+        ],
       ),
-
     ],
     initialLocation: '/login',
     debugLogDiagnostics: true,

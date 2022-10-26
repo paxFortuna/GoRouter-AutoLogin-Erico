@@ -32,7 +32,9 @@ class MainPage extends StatelessWidget {
               child: const Text('To Profile'),
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                context.goNamed('about');
+              },
               child: const Text('To About'),
             ),
             const Divider(
