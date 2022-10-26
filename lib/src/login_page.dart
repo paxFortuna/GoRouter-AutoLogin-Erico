@@ -5,6 +5,31 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+          title: const Text(
+        'Login Page',
+        style: TextStyle(
+          fontSize: 20,
+        ),
+      )),
+      body: Container(
+        alignment: Alignment.center,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              'Login Page',
+              style: TextStyle(fontSize: 30),
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text('LOGIN'),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
