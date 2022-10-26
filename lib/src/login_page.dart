@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -24,7 +25,9 @@ class LoginPage extends StatelessWidget {
               style: TextStyle(fontSize: 30),
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                context.goNamed('main_page');
+              },
               child: const Text('LOGIN'),
             ),
           ],

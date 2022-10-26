@@ -11,13 +11,23 @@ void main() {
 class MyApp extends StatelessWidget {
   final GoRouter router = GoRouter(
     routes: [
+      // top leve router
       GoRoute(
           path: '/login',
           name: 'login',
-          builder: (context, state) => const LoginPage()),
+          builder: (context, state) => const LoginPage(),
+      ),
+      GoRoute(
+        path: '/',
+        name: 'main_page',
+        builder: (context, state) => const MainPage(),
+      ),
+
     ],
     initialLocation: '/login',
     debugLogDiagnostics: true,
+    // 뒤로 가기 중지
+    routerNeglect: true,
   );
 
   MyApp({super.key});
